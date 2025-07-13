@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-dwpzcsoj-gitops
+  description: This is GitOps manifest for go-dwpzcsoj   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-dwpzcsoj
+    backstage.io/kubernetes-id: go-dwpzcsoj 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-dwpzcsoj
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-dwpzcsoj
